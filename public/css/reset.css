@@ -1,0 +1,56 @@
+:root{
+  --blue-color: #007bff
+}
+.site-menu {
+  text-align: left;
+  margin-left: 0 !important;
+  margin-right: auto!important
+}
+.site-logo {
+  text-align: right;
+}
+.site-logo a {
+  color: #fff !important
+}
+.site-navbar {
+  background: #007bff
+}
+.site-menu  a
+{
+  color: #fff !important
+}
+.toggle-list {
+  float: left;
+}
+.toggle-list i {
+  color:#fff !important
+}
+
+.hero, .hero > .container > .row {
+    height: 90vh;
+    min-height: 400px;
+}
+.intro , .intro h1 , .intro a{
+color:#fff !important
+}
+
+.hero ,.hero.inner-page {
+  position: relative;
+}
+
+.hero:after  ,.hero.inner-page:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .3);
+  height: 100%;
+}
+/*** Mobile Devices ****/
+@media (max-width: 991.98px){
+.site-navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+}
