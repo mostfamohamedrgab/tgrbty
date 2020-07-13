@@ -15,9 +15,9 @@ class CreateExperiencesTable extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('slug');
-            $table->string('img');
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('img')->nullable();
             $table->longText('content');
             // relarion with user
             $table->unsignedBigInteger('user_id');
@@ -30,6 +30,7 @@ class CreateExperiencesTable extends Migration
 
             $table->tinyInteger('approved')->default(0);
             $table->tinyInteger('anonymous')->default(0); // post as a anonymous
+            $table->string('keywords')->nullable(); // keywords
 
             $table->timestamps();
         });

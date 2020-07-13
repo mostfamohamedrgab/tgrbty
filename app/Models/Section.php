@@ -11,4 +11,5 @@ class Section extends Model
     public function experience(){
       return $this->hasMany(Experience::class);
     }
+
 }

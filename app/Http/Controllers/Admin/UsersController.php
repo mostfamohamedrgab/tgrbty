@@ -89,29 +89,25 @@ class UsersController extends Controller
       $user = User::findOrFail($id);
       $data = $request->validate([
         'name' => 'required|min:4',
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users,email,'.$user->id(),
         'password' => 'nullable|min:8',
         'about' => 'nullable'
       ]);
 
     // check passowrd
     $data['password'] = $user->password;
-
     if(! empty($request->password))
-    {
       $data['password'] = password_hash($request->password,PASSWORD_DEFAULT);
-    }
-
    // set old imag
     $data['img'] = $user->img;
     // hundel image
     if($request->hasFile('img')){
      $data['img'] = uplode_img($request->img); // set new iamge to update
+     $data['uplodeImg'] = true;
      // remove Old Image
      if($user->img != 'avatar.png')
       Storage::disk('imgs')->delete($user->img);
     }
-
     $user->update($data);
     return back()->withSuccess('تم التعديل بنجاح ');
     }

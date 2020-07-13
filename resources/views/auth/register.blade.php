@@ -107,12 +107,31 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-sm btn-primary">
                                     تسجيل
                                 </button>
                             </div>
                         </div>
+
                     </form>
+                    <hr />
+                    <div class="form-group">
+                      <p class="text-center">او التسجيل عن طريق</p>
+                      <div class="col-md-12 col-md-offset-4">
+
+                        <a class="btn-sm btn-primary" style="margin:5px;background:#4267B2" href="{{ url('/login/facebook') }}">
+                          <i class="fab fa-facebook" aria-hidden="true"></i>
+                           فيس بوك
+                         </a>
+
+                        <a class="btn-sm btn-primary" style="margin:5px;background:#DB4437"
+                        href="{{ url('login/google') }}">
+                          <i class="fab fa-google" aria-hidden="true"></i>
+                           جوجل
+                        </a>
+
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

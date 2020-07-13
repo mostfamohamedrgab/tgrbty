@@ -34,4 +34,11 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    //*** Google Login Data *****//
+    'google' => [
+        'client_id' => '647774347870-b90qlh1h3vg1fm5ea9djelj7mn9jiep9.apps.googleusercontent.com',
+        'client_secret' => 'FFoR1rZwNzYECkyVmKNr54xt',
+        'redirect' => 'http://tgrbty.work/login/google/callback',
+    ],
+
 ];

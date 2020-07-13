@@ -74,6 +74,11 @@
       <input type="checkbox" value="1" name="anonymous" />
     </div>
 
+    <div class="form-group">
+      <label >الكلمات المفتاحية</label>
+      <textarea class="form-control" name="keywords">{{old('keywords')}}</textarea>
+    </div>
+
     <button type="submit" class="btn btn-primary">حفظ</button>
   </form>
 

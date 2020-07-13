@@ -32,9 +32,7 @@
           <td>{{$section->id}}</td>
           <td>{{$section->name}}</td>
           <td>
-            @if($section->icon)
-            <i class="{{$section->icon}}"></i>
-            @endif
+          {!! $section->icon !!}
           </td>
 
 

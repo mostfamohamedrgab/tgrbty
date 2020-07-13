@@ -19,6 +19,8 @@ Route::group(['prefix' => 'Dashboard','as' => 'admin.','middleware' => 'auth:adm
       // experiences
       Route::resource('Experience','ExperienceController');
       Route::get('Experience/status/{id}','ExperienceController@changestuts')->name('Experience.chnagestutes');
+      // # Contact
+      Route::resource('Contact','ContactController');
       // Lougout
       Route::post('Logout','AuthController@logout')->name('logout');
 });

@@ -52,7 +52,8 @@ class ExperienceController extends Controller
           'user_id' => 'required',
           'section_id' => 'required',
           'anonymous' => 'nullable',
-          'approved' => 'required'
+          'approved' => 'required',
+          'keywords' => 'nullable'
         ]);
         $data['slug'] = Str::slug($request->title);
         $data['img'] = uplode_img($request->img);
@@ -105,7 +106,8 @@ class ExperienceController extends Controller
         'user_id' => 'required',
         'section_id' => 'required',
         'anonymous' => 'nullable',
-        'approved' => 'required'
+        'approved' => 'required',
+        'keywords' => 'nullable'
       ]);
 
       $data['slug'] = Str::slug($request->title);
@@ -115,9 +117,9 @@ class ExperienceController extends Controller
         $data['img'] = uplode_img($request->img);
         Storage::disk('imgs')->delete($experience->img);
       }
-
+      $data['anonymous'] = !empty($request->anonymous) ? 1 : 0;
       $experience->update($data);
-      return back()->withSuccess('تم الاضافة بنجاح');
+      return back()->withSuccess('تم التعديل بنجاح');
     }
 
     /**

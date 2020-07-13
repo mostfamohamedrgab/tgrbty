@@ -50,24 +50,13 @@
     </li>
 
     <li>
-      <a href="#">
+      <a href="{{ route('admin.Contact.index') }}">
         <i class="fa fa-envelope-o"></i> <span>الرسائل</span>
         <small class="label pull-right bg-yellow">
-          2
+          {{ App\Models\Contact::count() }}
         </small>
       </a>
     </li>
-
-    <li>
-      <a href="#">
-        <i class="fa fa-newspaper-o"></i> <span>الاخبار</span>
-        <small class="label pull-right bg-yellow">
-          1
-        </small>
-
-      </a>
-    </li>
-
 
 
   </ul>

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Experience;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','about','img'
+        'name', 'email', 'password','about','img','provider', 'provider_id',
+        'uplodeImg'
     ];
 
     /**
@@ -36,4 +38,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*** User Experience ****/
+    public function Experiences()
+    {
+      return $this->hasMany(Experience::class)->where('approved',1)->where('anonymous',0);
+    }
+
 }

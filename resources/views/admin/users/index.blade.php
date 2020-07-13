@@ -35,7 +35,7 @@
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
           <td>
-            <img src="{{asset('public/storage/imgs/'.$user->img)}}"
+            <img src="{{! empty($user->provider) ? $user->img :  asset('public/storage/imgs/'.$user->img)}}"
               style="width:40px;height:40px;border-radius:50%" />
           </td>
           <td>{{$user->about}}</td>

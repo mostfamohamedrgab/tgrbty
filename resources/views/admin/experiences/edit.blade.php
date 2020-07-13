@@ -17,7 +17,7 @@
     action="{{route('admin.Experience.update',$experience->id)}}" method="post">
       @csrf
       @method('PUT')
-      
+
     <div class="form-group">
       <label >عنوان التجربة</label>
       <input type="text" class="form-control" name="title" required value="{{ $experience->title }}">
@@ -67,10 +67,10 @@
       <label >حالة التجربة</label>
       <select class="form-control" required="required" name="approved">
         <option
-        {{$experience->approved == 1 ? 'selected' : ''}}
+        {{$experience->approved == 0 ? 'selected' : ''}}
         value="0">غير مفعل</option>
         <option
-        {{$experience->approved ==  0 ? 'selected' : ''}}
+        {{$experience->approved ==  1 ? 'selected' : ''}}
         value="1">مفعل</option>
       </select>
     </div>
@@ -80,6 +80,11 @@
       <input type="checkbox"
       {{$experience->anonymous ? 'checked' : ''}}
       value="1" name="anonymous" />
+    </div>
+
+    <div class="form-group">
+      <label >الكلمات المفتاحية</label>
+      <textarea class="form-control" name="keywords">{{ $experience->keywords }}</textarea>
     </div>
 
     <hr />

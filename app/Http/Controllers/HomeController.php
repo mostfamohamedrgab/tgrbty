@@ -25,9 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $experience = Experience::activeExp()->paginate(20);
+        $experience = Experience::activeExp()->limit(20)->get();
         $sections = Section::select('id','name')->get();
         $pageTitle = 'الرئيسية';
-        return view('home', \compact('pageTitle','experience','sections'));
+        // Best Likes
+        $bestExp = Experience::activeExp()->limit(20)->get();
+        foreach($bestExp as $exp)
+        {
+            $exp->setAttribute('likesCount',$exp->likes->count());
+        }
+        $bestExp = $bestExp->sortByDesc(function ($exp){
+            return $exp->likesCount;
+        });
+
+        return view('home', \compact('bestExp','pageTitle','experience','sections'));
     }
 }

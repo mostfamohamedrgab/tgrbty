@@ -108,6 +108,24 @@
                             </div>
                         </div>
                     </form>
+                    <hr />
+                    <div class="form-group">
+                      <p class="text-center">او الدخول عن طريق</p>
+                      <div class="col-md-12 col-md-offset-4">
+
+                          <a class="btn-sm btn-primary" style="margin:5px;background:#4267B2" href="{{ url('/login/facebook') }}">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                             فيس بوك
+                           </a>
+
+                          <a class="btn-sm btn-primary" style="margin:5px;background:#DB4437"
+                          href="{{ url('login/google') }}">
+                            <i class="fab fa-google" aria-hidden="true"></i>
+                             جوجل
+                          </a>
+
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
